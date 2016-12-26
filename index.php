@@ -1,3 +1,6 @@
+<?php
+  include('session.php');
+?>
 <!DOCTYPE html>
 <html>
 
@@ -32,13 +35,13 @@
                             <img alt="image" class="img-circle" src="assets/img/profile_small.jpg" />
                              </span>
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">David Williams</strong>
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold"><?=$nama?></strong>
                              </span> <span class="text-muted text-xs block">Direktur Manajer<b class="caret"></b></span> </span> </a>
                             <ul class="dropdown-menu animated fadeInRight m-t-xs">
                                 <li><a href="#">Profile</a></li>
                                 <li><a href="#">Mailbox</a></li>
                                 <li class="divider"></li>
-                                <li><a href="#">Logout</a></li>
+                                <li><a href="logout.php">Logout</a></li>
                             </ul>
                         </div>
                         <div class="logo-element">
@@ -59,10 +62,10 @@
                     <li>
                         <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Data Master</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
-                            <li><a href="master_member.php">Data Member</a></li>
-                            <li><a href="master_member.php">Data Trainer</a></li>
-                            <li><a href="master_member.php">Data Karyawan</a></li>
-                            <li><a href="master_member.php">Data Aset</a></li>
+                            <li class="active"><a href="master_member.php">Data Member</a></li>
+                            <li><a href="master_trainer.php">Data Trainer</a></li>
+                            <li><a href="master_karyawan.php">Data Karyawan</a></li>
+                            <li><a href="master_aset.php">Data Aset</a></li>
                         </ul>
                     </li>
                     <li>
@@ -173,6 +176,13 @@
                                     </li>
                                 </ul>
                             </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">CRM</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="#">Email Gateway</a></li>
+                            <li><a href="#">SMS Gateway</a></li>
                         </ul>
                     </li>
                     <li>
@@ -300,7 +310,7 @@
 
 
                 <li>
-                    <a href="login.html">
+                    <a href="logout.php">
                         <i class="fa fa-sign-out"></i> Log out
                     </a>
                 </li>
@@ -311,7 +321,7 @@
                 <div class="row  border-bottom white-bg dashboard-header">
 
                     <div class="col-sm-3">
-                        <h2>Hai David,</h2>
+                        <h2>Hai <?=$nama;?>,</h2>
                         <small>Ada 42 pesan dan 6 notifikasi terbaru.</small>
                         <ul class="list-group clear-list m-t">
                             <li class="list-group-item fist-item">
@@ -783,6 +793,7 @@
 
     <script>
         $(document).ready(function() {
+            var nama = <?php echo json_encode($nama); ?>;
             setTimeout(function() {
                 toastr.options = {
                     closeButton: true,
@@ -790,7 +801,7 @@
                     showMethod: 'slideDown',
                     timeOut: 4000
                 };
-                toastr.success('Sistem Informasi Manajemen Fitness SOSI', 'Selamat Datang David Williams');
+                toastr.success('Sistem Informasi Manajemen Fitness SOSI', 'Selamat Datang '+nama);
 
             }, 1300);
 

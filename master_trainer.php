@@ -1,3 +1,6 @@
+<?php
+  include('session.php');
+?>
 <!DOCTYPE html>
 <html>
 
@@ -32,14 +35,14 @@
                             <img alt="image" class="img-circle" src="assets/img/profile_small.jpg" />
                              </span>
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">David Williams</strong>
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold"><?=$nama?></strong>
                              </span> <span class="text-muted text-xs block">Manajer<b class="caret"></b></span> </span> </a>
                             <ul class="dropdown-menu animated fadeInRight m-t-xs">
                                 <li><a href="profile.html">Profile</a></li>
                                 <li><a href="contacts.html">Contacts</a></li>
                                 <li><a href="mailbox.html">Mailbox</a></li>
                                 <li class="divider"></li>
-                                <li><a href="login.html">Logout</a></li>
+                                <li><a href="logout.php">Logout</a></li>
                             </ul>
                         </div>
                         <div class="logo-element">
@@ -47,15 +50,15 @@
                         </div>
                     </li>
                     <!-- All Menu -->
-                    <li class="active">
-                        <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Dasbor</span></span></a>
+                    <li>
+                        <a href="index.php"><i class="fa fa-th-large"></i> <span class="nav-label">Dasbor</span></span></a>
 
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Data Master</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
-                            <li class="active"><a href="master_member.php">Data Member</a></li>
-                            <li><a href="master_trainer.php">Data Trainer</a></li>
+                            <li><a href="master_member.php">Data Member</a></li>
+                            <li class="active"><a href="master_trainer.php">Data Trainer</a></li>
                             <li><a href="master_karyawan.php">Data Karyawan</a></li>
                             <li><a href="master_aset.php">Data Aset</a></li>
                         </ul>
@@ -153,6 +156,13 @@
                         </ul>
                     </li>
                     <li>
+                        <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">CRM</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="#">Email Gateway</a></li>
+                            <li><a href="#">SMS Gateway</a></li>
+                        </ul>
+                    </li>
+                    <li>
                         <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Kelola User</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li><a href="graph_flot.html">Data User</a></li>
@@ -187,7 +197,7 @@
                         <li>
                             <div class="dropdown-messages-box">
                                 <a href="profile.html" class="pull-left">
-                                    <img alt="image" class="img-circle" src="img/a7.jpg">
+                                    <img alt="image" class="img-circle" src="assets/img/a7.jpg">
                                 </a>
                                 <div class="media-body">
                                     <small class="pull-right">46h ago</small>
@@ -200,7 +210,7 @@
                         <li>
                             <div class="dropdown-messages-box">
                                 <a href="profile.html" class="pull-left">
-                                    <img alt="image" class="img-circle" src="img/a4.jpg">
+                                    <img alt="image" class="img-circle" src="assets/img/a4.jpg">
                                 </a>
                                 <div class="media-body ">
                                     <small class="pull-right text-navy">5h ago</small>
@@ -277,7 +287,7 @@
 
 
                 <li>
-                    <a href="login.html">
+                    <a href="logout.php">
                         <i class="fa fa-sign-out"></i> Log out
                     </a>
                 </li>
@@ -285,105 +295,137 @@
 
         </nav>
         </div>
-    <!-- Content -->
-
-        <div class="row wrapper border-bottom white-bg page-heading">
+              <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-lg-10">
-                    <h2>Form Tambah Member</h2>
+                    <h2>Data Master</h2>
                     <ol class="breadcrumb">
                         <li>
                             <a href="index.html">Home</a>
                         </li>
                         <li>
-                            <a>Master Form</a>
+                            <a>Master</a>
                         </li>
                         <li class="active">
-                            <strong>Tambah Member</strong>
+                            <strong>Data Trainer</strong>
                         </li>
                     </ol>
                 </div>
                 <div class="col-lg-2">
 
                 </div>
-        </div>
+            </div>
         <div class="wrapper wrapper-content animated fadeInRight">
+
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="ibox float-e-margins">
-                        <div class="ibox-title">
-                            <h5>Tambah Data Member</h5>
-                            <div class="ibox-tools">
-                                <a class="collapse-link">
-                                    <i class="fa fa-chevron-up"></i>
-                                </a>
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                    <i class="fa fa-wrench"></i>
-                                </a>
-                                <ul class="dropdown-menu dropdown-user">
-                                    <li><a href="#">Config option 1</a>
-                                    </li>
-                                    <li><a href="#">Config option 2</a>
-                                    </li>
-                                </ul>
-                                <a class="close-link">
-                                    <i class="fa fa-times"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="ibox-content">
-                            <form method="get" class="form-horizontal">
-                                <div class="form-group"><label class="col-sm-2 control-label">Nama Lengkap</label>
-
-                                    <div class="col-sm-10"><input type="text " placeholder="Masukkan Nama Lengkap Member" class="form-control"></div>
-                                </div>
-                                <div class="hr-line-dashed"></div>
-                                <div class="form-group"><label class="col-sm-2 control-label">Alamat</label>
-
-                                    <div class="col-sm-10"><input type="text" placeholder="Masukan Alamat Member" class="form-control"></div>
-                                </div>
-                                <div class="hr-line-dashed"></div>
-                                <div class="form-group"><label class="col-sm-2 control-label">Jenis Kelamin:</label>
-
-                                    <div class="col-sm-10">
-                                        <div class="radio">
-                                            <label>
-                                                <input type="radio"  value="option1" id="optionsRadios1" name="optionsRadios">
-                                                Laki - laki
-                                            </label>
-                                        </div>
-                                        <div class="radio">
-                                            <label>
-                                                <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios">
-                                                Perempuan
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="hr-line-dashed"></div>
-                                <div class="form-group"><label class="col-sm-2 control-label">Email</label>
-
-                                    <div class="col-sm-10"><input type="email" placeholder="Masukan Alamat Email" class="form-control"></div>
-                                </div>
-                                <div class="hr-line-dashed"></div>
-                                <div class="form-group"><label class="col-sm-2 control-label">No. Handphone</label>
-
-                                    <div class="col-sm-10"><input type="number" placeholder="Masukan No. Handphone" class="form-control"></div>
-                                </div>
-                                <div class="hr-line-dashed"></div>
-                                <div class="form-group">
-                                    <div class="col-sm-4 col-sm-offset-2">
-                                        <button class="btn btn-white" type="submit">Batal</button>
-                                        <button class="btn btn-primary" type="submit">Simpan Data</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
+                <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Data Master Trainer</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-wrench"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li><a href="#">Config option 1</a>
+                            </li>
+                            <li><a href="#">Config option 2</a>
+                            </li>
+                        </ul>
+                        <a class="close-link">
+                            <i class="fa fa-times"></i>
+                        </a>
                     </div>
+                </div>
+                <div class="ibox-content">
+                <div class="">
+                <a href="form_trainer_tambah.php" class="btn btn-primary ">Tambah Data Trainer</a>
+                </div>
+                <table class="table table-striped table-bordered table-hover " id="editable" >
+                <thead>
+                <tr>
+                    <th>Nama Trainer</th>
+                    <th>Alamat</th>
+                    <th>Jenis Kelamin</th>
+                    <th>Email</th>
+                    <th>No. Handphone</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="gradeX">
+                    <td>Agus Sudarma</td>
+                    <td>Jl. Sukamiskin No. 20 RT.05 RW.10
+                    </td>
+                    <td>Laki - laki</td>
+                    <td class="center">agus@mail.com</td>
+                    <td class="center">081310123654</td>
+                </tr>
+                <tr class="gradeC">
+                    <td>Charlie Van Boston</td>
+                    <td>Jl. Amrik No. 111 RT. 01 RW.10
+                    </td>
+                    <td>Laki - laki</td>
+                    <td class="center">charlievanboston@mail.com</td>
+                    <td class="center">081310123654</td>
+                </tr>
+                <tr class="gradeA">
+                    <td>Dedi Atmajaya</td>
+                    <td>Jl. Ujung Berung No. 123 RT.12 RW.03
+                    </td>
+                    <td>Laki - laki</td>
+                    <td class="center">dedi@mail.com</td>
+                    <td class="center">081310123654</td>
+                </tr>
+                <tr class="gradeA">
+                    <td>Edi Rahmat</td>
+                    <td>Jl. Padalarang Barat No. 123 RT.12 RW.03
+                    </td>
+                    <td>Laki - laki</td>
+                    <td class="center">rahmatedi@mail.com</td>
+                    <td class="center">081310123654</td>
+                </tr>
+                <tr class="gradeA">
+                    <td>Fahmi Nur Khalid</td>
+                    <td>Jl. Sukamulya Barat II No. 33 RT. 02 RW. 02</td>
+                    <td>Laki - laki</td>
+                    <td class="center">fahmikhalid@mail.com</td>
+                    <td class="center">081310123654</td>
+                </tr>
+                <tr class="gradeA">
+                    <td>Gery Syaefullah</td>
+                    <td>Jl. Gagak Rimang No. 2020 RT. 01 RW. 01</td>
+                    <td>Laki - laki</td>
+                    <td class="center">geryepul@mail.com</td>
+                    <td class="center">081310123654</td>
+                </tr>
+                <tr class="gradeC">
+                    <td>Hani Suciyati</td>
+                    <td>Jl. Jalaprang No. 101 RT. 03 RW. 07</td>
+                    <td>Perempuan</td>
+                    <td class="center">hanisuci@mail.com</td>
+                    <td class="center">081810123456</td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                    <th>Nama Trainer</th>
+                    <th>Alamat</th>
+                    <th>Jenis Kelamin</th>
+                    <th>Email</th>
+                    <th>No. Handphone</th>
+                </tr>
+                </tfoot>
+                </table>
+
+                </div>
+                </div>
                 </div>
             </div>
         </div>
 
-    <!-- End Content -->
+
         </div>
     </div>
 
