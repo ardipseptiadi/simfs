@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>INSPINIA | Login</title>
+    <title>SIMFS | Login</title>
 
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -27,14 +27,14 @@
             </div>
             <h3>Sistem Informasi Manajemen Fitness SOSI</h3>
 
-            <form class="m-t" role="form" action="index.html">
+            <form class="m-t" role="form" action="proseslogin.php" method="post">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Username" required="">
+                    <input type="text" class="form-control" name="username" placeholder="Username" required="">
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Password" required="">
+                    <input type="password" class="form-control" name="password" placeholder="Password" required="">
                 </div>
-                <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
+                <button name="submit" type="submit" class="btn btn-primary block full-width m-b">Login</button>
 
                 <a href="#"><small>Lupa password?</small></a>
             </form>

@@ -1,3 +1,6 @@
+<?php
+  include('session.php');
+?>
 <!DOCTYPE html>
 <html>
 
@@ -32,14 +35,14 @@
                             <img alt="image" class="img-circle" src="assets/img/profile_small.jpg" />
                              </span>
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">David Williams</strong>
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold"><?=$nama?></strong>
                              </span> <span class="text-muted text-xs block">Manajer<b class="caret"></b></span> </span> </a>
                             <ul class="dropdown-menu animated fadeInRight m-t-xs">
                                 <li><a href="profile.html">Profile</a></li>
                                 <li><a href="contacts.html">Contacts</a></li>
                                 <li><a href="mailbox.html">Mailbox</a></li>
                                 <li class="divider"></li>
-                                <li><a href="login.html">Logout</a></li>
+                                <li><a href="logout.php">Logout</a></li>
                             </ul>
                         </div>
                         <div class="logo-element">
@@ -48,16 +51,16 @@
                     </li>
                     <!-- All Menu -->
                     <li>
-                        <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Dasbor</span></span></a>
+                        <a href="index.php"><i class="fa fa-th-large"></i> <span class="nav-label">Dasbor</span></span></a>
 
                     </li>
                     <li class="active">
                         <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Data Master</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
-                            <li class="active"><a href="graph_flot.html">Data Member</a></li>
-                            <li><a href="graph_morris.html">Data Trainer</a></li>
-                            <li><a href="graph_rickshaw.html">Data Karyawan</a></li>
-                            <li><a href="graph_rickshaw.html">Data Aset</a></li>
+                            <li class="active"><a href="master_member.php">Data Member</a></li>
+                            <li><a href="master_trainer.php">Data Trainer</a></li>
+                            <li><a href="master_karyawan.php">Data Karyawan</a></li>
+                            <li><a href="master_aset.php">Data Aset</a></li>
                         </ul>
                     </li>
                     <li>
@@ -150,6 +153,13 @@
                                     </li>
                                 </ul>
                             </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">CRM</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="#">Email Gateway</a></li>
+                            <li><a href="#">SMS Gateway</a></li>
                         </ul>
                     </li>
                     <li>
@@ -277,7 +287,7 @@
 
 
                 <li>
-                    <a href="login.html">
+                    <a href="logout.php">
                         <i class="fa fa-sign-out"></i> Log out
                     </a>
                 </li>
